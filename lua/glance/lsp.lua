@@ -75,7 +75,7 @@ end
 
 function M.request(name, params, bufnr, cb)
   if M.methods[name] then
-    params.context = { includeDeclaration = true }
+    params.context = { includeDeclaration = false }
     M.methods[name].handler(bufnr, params, cb)
   else
     utils.error(("No such method '%s'"):format(name))
